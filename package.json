@@ -1,0 +1,22 @@
+{
+  "name": "meannasdaq",
+  "version": "1.0.0",
+  "description": "Mean Nasdaq application",
+  "main": "app.js",
+  "scripts": {
+    "test": "tdd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sangkeerthana70/MeanNASDAQ.git"
+  },
+  "keywords": [
+    "mean"
+  ],
+  "author": "Anuradha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sangkeerthana70/MeanNASDAQ/issues"
+  },
+  "homepage": "https://github.com/sangkeerthana70/MeanNASDAQ#readme"
+}
