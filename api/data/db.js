@@ -41,7 +41,7 @@ process.once('SIGUSR2', function() {
 
 //Bring in SCHEMAS and MODELS
 require('./companies.models');
-
+require('./users.model.js');
 
 
 

@@ -1,0 +1,60 @@
+/*global  angular  CompaniesController  CompanyController RegisterController*/
+angular.module('meanNASDAQ', ['ngRoute', 'angular-jwt']).config(config);//modified the app.js to configure a single route now
+
+function config($httpProvider,$routeProvider) {//a built in angular service where we define routes.
+    //$httpProvider.interceptors.push('AuthInterceptor');//use AuthInterceptor to intercept http requests.
+    
+    $routeProvider
+        .when('/', {
+            templateUrl: 'angular-app/main/welcome.html',
+            access: {
+                restricted: false
+            }
+        })
+        .when('/companies', {
+            template: "<h1>I am here</h1>",
+            templateUrl: 'angular-app/company-list/companies.html',
+            controller: CompaniesController,
+            controllerAs: 'vm',
+            access: {
+                restricted: false
+            }
+        })
+        .when('/company/:companyId', {
+            templateUrl: 'angular-app/company-display/company.html',
+            controller: CompanyController,
+            controllerAs: 'vm',
+            access: {
+                restricted: false
+            }
+        })/*
+        .when('/register', {
+            templateUrl: 'angular-app/register/register.html',
+            controller: RegisterController,
+            controllerAs: 'vm',
+            access: {
+                restricted: false
+            }
+        })
+        .when('/profile', {//restricted path, user cannot access their profile unless logged in.
+            templateUrl: 'angular-app/profile/profile.html',
+            access: {
+                restricted: true
+            }
+        })*/
+        .otherwise({
+            redirectTo: '/'
+        });
+    }
+/*   
+function run($rootScope, $location, $window, AuthFactory) {
+  $rootScope.$on('$routeChangeStart', function(event, nextRoute, currentRoute) {
+    if (nextRoute.access !== undefined && nextRoute.access.restricted && !$window.sessionStorage.token && !AuthFactory.isLoggedIn) {
+      event.preventDefault();
+      $location.path('/');
+    }
+  });
+}
+*/
+
+

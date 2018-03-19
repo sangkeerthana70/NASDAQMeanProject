@@ -44,7 +44,7 @@ module.exports.companiesGetAll = function(req, res) {
   }
 
     Company
-      .find()
+      .find({}, 'Name LastSale MarketCap IPOyear')
       .skip(offset)
       .limit(count)
       .exec(function(err, companies) {

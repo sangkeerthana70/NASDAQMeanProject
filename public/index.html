@@ -1,1 +1,22 @@
-<h1>Hello World!</h1>
+<!doctype html>
+
+<html ng-app="meanNASDAQ">    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>MEAN NASDAQ</title>
+    </head>
+    <body>
+        <div class="container">
+            <div ng-view></div>
+        </div>
+        <script src="node_modules/angular/angular.js"></script>
+        <script src="node_modules/angular-route/angular-route.js"></script>
+        <script src="node_modules/angular-jwt/dist/angular-jwt.js"></script>        
+        <script src="angular-app/app.js"></script>
+        <script src="angular-app/company-list/company-list-controller.js"></script>
+        <script src="angular-app/company-display/company-display-controller.js"></script>
+        <script src="angular-app/company-data-factory/company-data-factory.js"></script>
+    </body>
+</html>
