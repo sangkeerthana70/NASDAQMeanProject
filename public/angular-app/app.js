@@ -12,7 +12,6 @@ function config($httpProvider,$routeProvider) {//a built in angular service wher
             }
         })
         .when('/companies', {
-            template: "<h1>I am here</h1>",
             templateUrl: 'angular-app/company-list/companies.html',
             controller: CompaniesController,
             controllerAs: 'vm',
@@ -27,7 +26,7 @@ function config($httpProvider,$routeProvider) {//a built in angular service wher
             access: {
                 restricted: false
             }
-        })/*
+        })
         .when('/register', {
             templateUrl: 'angular-app/register/register.html',
             controller: RegisterController,
@@ -41,7 +40,7 @@ function config($httpProvider,$routeProvider) {//a built in angular service wher
             access: {
                 restricted: true
             }
-        })*/
+        })
         .otherwise({
             redirectTo: '/'
         });

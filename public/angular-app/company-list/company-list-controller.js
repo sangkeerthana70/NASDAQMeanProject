@@ -6,9 +6,8 @@ function CompaniesController(companyDataFactory) {
     var vm = this;
     vm.title = 'MEAN NASDAQ App';
     companyDataFactory.companyList().then(function(response) {
-        //console.log(response);
-        console.log(response.data);
         vm.companies = response.data;
+        console.log(vm.companies);
         //add the hotel property to the view model.
     });
 }
