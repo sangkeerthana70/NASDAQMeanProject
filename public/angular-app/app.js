@@ -2,7 +2,7 @@
 angular.module('meanNASDAQ', ['ngRoute', 'angular-jwt']).config(config);//modified the app.js to configure a single route now
 
 function config($httpProvider,$routeProvider) {//a built in angular service where we define routes.
-    //$httpProvider.interceptors.push('AuthInterceptor');//use AuthInterceptor to intercept http requests.
+    $httpProvider.interceptors.push('AuthInterceptor');//use AuthInterceptor to intercept http requests.
     
     $routeProvider
         .when('/', {
