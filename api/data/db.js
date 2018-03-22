@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var dburl = 'mongodb://anuradha78-homework1-5577789/nasdaq';
-var retry = null;
+//var retry = null;
 mongoose.connect(dburl);
 
 //connection events

@@ -1,5 +1,5 @@
-/*global  angular  CompaniesController  CompanyController RegisterController*/
-angular.module('meanNASDAQ', ['ngRoute', 'angular-jwt']).config(config);//modified the app.js to configure a single route now
+/*global  angular  CompaniesController  CompanyController SymbolController RegisterController*/
+angular.module('meanNASDAQ', ['ngRoute', 'angular-jwt']).config(config).run(run);//modified the app.js to configure a single route now
 
 function config($httpProvider,$routeProvider) {//a built in angular service where we define routes.
     $httpProvider.interceptors.push('AuthInterceptor');//use AuthInterceptor to intercept http requests.
@@ -27,6 +27,15 @@ function config($httpProvider,$routeProvider) {//a built in angular service wher
                 restricted: false
             }
         })
+        .when('/companyBySymbol/:symbol', {
+            templateUrl: 'angular-app/main/welcome.html',
+            controller: SymbolController,
+            controllerAs: 'vm',
+            access: {
+                restricted: false
+            }
+            
+        })
         .when('/register', {
             templateUrl: 'angular-app/register/register.html',
             controller: RegisterController,
@@ -45,7 +54,7 @@ function config($httpProvider,$routeProvider) {//a built in angular service wher
             redirectTo: '/'
         });
     }
-/*   
+   
 function run($rootScope, $location, $window, AuthFactory) {
   $rootScope.$on('$routeChangeStart', function(event, nextRoute, currentRoute) {
     if (nextRoute.access !== undefined && nextRoute.access.restricted && !$window.sessionStorage.token && !AuthFactory.isLoggedIn) {
@@ -54,6 +63,6 @@ function run($rootScope, $location, $window, AuthFactory) {
     }
   });
 }
-*/
+
 
 
