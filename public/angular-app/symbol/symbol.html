@@ -1,0 +1,10 @@
+    <h1>Information on {{ vm.company.Name }} </h1>
+    <p>Company-id:  {{ vm.company._id}}</p>
+    <p>Symbol: {{vm.company.Symbol }}</p>
+    <p>MarketCap: {{ vm.company.MarketCap }}</p>
+    <p>LastSale: {{ vm.company.LastSale }}</p>
+    <p>Ipoyear: {{ vm.company.IPOyear }}</p>
+    <p>Sector: {{ vm.company.Sector }}</p>
+    <p>Industry: {{ vm.company.industry }}</p>
+    <p>Summary Quote: <a href= "{{ vm.company['Summary Quote'] }}">{{ vm.company['Summary Quote'] }}</a></p>
+

@@ -6,7 +6,8 @@ function companyDataFactory($http) {
     return {
         companyList: companyList,
         companyDisplay: companyDisplay,
-        companyBySymbol: companyBySymbol
+        companyBySymbol: companyBySymbol,
+        companyDetails: companyDetails
     };
     
     function companyList() {
@@ -20,6 +21,15 @@ function companyDataFactory($http) {
     
     function companyBySymbol(symbol) {
         return $http.get('/api/companyBySymbol/' + symbol).then(complete).catch(failed);
+    }
+    
+    function companyDetails(symbol,key) {
+        var url = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol="+symbol+"&apikey="+key;
+        console.log(url);
+        return $http({
+            method: "GET",
+            url : url
+        });
     }
     
     function complete(response) {

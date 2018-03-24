@@ -1,45 +1,14 @@
-/*Sticky footer styles*/
-
-html {
-    position: relative;
-    min-height: 100%;
-}
-
-body {
-    /*margin bottom by footer height*/
-    margin-bottom: 90px;
-}
 .container {
     padding: 0px 0px 0px 0px;
     margin-top:10px;
 }
-.padded {
-    padding-top: 30px;
+.container2 {
+    padding: 0px 0px 0px 0px; 
+    margin-top:50px;
+}
+.cinput {
+    background-color: white;
+    width:30px;
+    color:blue;
 }
 
-h1 {
-    border: 100px;
-}
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /*set the fixed height of footer here*/
-    height: 90px;
-    background-color: #f5f5f5;
-    padding-top: 20px;
-}
-.reviewForm {
-    color:black;
-}
-table, th, td {
-    border-color: white;
-    border-width: 5px;
-}
-th {
-    font-size:20px;
-}
-th, td {
-    padding: 5px;
-    text-align: left;
-}

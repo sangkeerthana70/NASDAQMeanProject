@@ -1,9 +1,27 @@
-<h1>Information on {{ vm.company.Name }} </h1>
-<p>Company-id:  {{ vm.company._id}}</p>
-<p>Symbol: {{vm.company.Symbol }}</p>
-<p>MarketCap: {{ vm.company.MarketCap }}</p>
-<p>LastSale: {{ vm.company.LastSale }}</p>
-<p>Ipoyear: {{ vm.company.IPOyear }}</p>
-<p>Sector: {{ vm.company.Sector }}</p>
-<p>Industry: {{ vm.company.industry }}</p>
-<p>Summary Quote: {{ vm.company.SummaryQuote }}</p>
+<div ng-controller="CompanyController as vm">
+    
+    <h1>Information on {{ vm.company.Name }} </h1>
+    <p>Company-id:  {{ vm.company._id}}</p>
+    <p>Symbol: {{vm.company.Symbol }}</p>
+    <p>MarketCap: {{ vm.company.MarketCap }}</p>
+    <p>LastSale: {{ vm.company.LastSale }}</p>
+    <p>Ipoyear: {{ vm.company.IPOyear }}</p>
+    <p>Sector: {{ vm.company.Sector }}</p>
+    <p>Industry: {{ vm.company.industry }}</p>
+    <p>Summary Quote: <a href= "{{ vm.company['Summary Quote'] }}">{{ vm.company['Summary Quote'] }}</a></p>
+
+    <form ng-click="vm.getCompanyDetails()">        
+        <button class="btn btn-info" type=submit>Get Latest Price</button>
+    </form> 
+    
+    <div ng-if="vm.displayPrice">
+        <p>Date: {{ vm.price.date }}</p>
+        <p>Opening Price: {{ vm.price.open }}</p>
+        <p>Closing Price: {{ vm.price.close }}</p>
+        <p>High: {{ vm.price.high }}</p>
+        <p>Low: {{ vm.price.low }}</p>
+        <p>Volume: {{ vm.price.volume }}</p>
+    </div>
+</div>
+        
+        

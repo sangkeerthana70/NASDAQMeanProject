@@ -1,4 +1,4 @@
-/*global  angular  CompaniesController  CompanyController SymbolController RegisterController*/
+/*global  angular  CompaniesController  CompanyController SymbolController LoginController RegisterController*/
 angular.module('meanNASDAQ', ['ngRoute', 'angular-jwt']).config(config).run(run);//modified the app.js to configure a single route now
 
 function config($httpProvider,$routeProvider) {//a built in angular service where we define routes.
@@ -27,15 +27,15 @@ function config($httpProvider,$routeProvider) {//a built in angular service wher
                 restricted: false
             }
         })
-        .when('/companyBySymbol/:symbol', {
-            templateUrl: 'angular-app/main/welcome.html',
+       .when('/companyBySymbol/:symbol', {
+            templateUrl: 'angular-app/symbol/symbol.html',
             controller: SymbolController,
             controllerAs: 'vm',
             access: {
                 restricted: false
             }
-            
         })
+        
         .when('/register', {
             templateUrl: 'angular-app/register/register.html',
             controller: RegisterController,

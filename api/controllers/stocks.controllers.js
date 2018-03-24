@@ -96,7 +96,7 @@ module.exports.companyGetOne = function(req, res) {
 module.exports.companyGetBySymbol = function(req, res) {
     console.log("In the Get By Symbol Route");
     var symbol = req.params.symbol;
-    
+    console.log(symbol);
     Company
         .findOne({"Symbol": symbol})
         .exec(function(err, doc) {
