@@ -30,5 +30,8 @@ router
   .route('/users/login')
   .post(ctrlUsers.login);
 
+router
+  .route('/companies-count')
+  .get(ctrlStocks.companyGetCount);
   
 module.exports = router;    

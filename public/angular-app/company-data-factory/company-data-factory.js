@@ -7,12 +7,18 @@ function companyDataFactory($http) {
         companyList: companyList,
         companyDisplay: companyDisplay,
         companyBySymbol: companyBySymbol,
-        companyDetails: companyDetails
+        companyDetails: companyDetails,
+        companyCount: companyCount
     };
     
-    function companyList() {
-        console.log("I am here");
-      return $http.get('/api/companies?count=25').then(complete).catch(failed);  
+    function companyCount() {
+      var route = '/api/companies-count';     
+      return $http.get(route).then(complete).catch(failed);  
+    }
+
+    function companyList(offset,count) {
+      var route = '/api/companies?count=15&offset='+offset;     
+      return $http.get(route).then(complete).catch(failed);  
     }
     
     function companyDisplay(id) {

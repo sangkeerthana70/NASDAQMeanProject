@@ -1,27 +1,28 @@
 <div ng-controller="CompanyController as vm">
     
-    <h1>Information on {{ vm.company.Name }} </h1>
-    <p>Company-id:  {{ vm.company._id}}</p>
-    <p>Symbol: {{vm.company.Symbol }}</p>
-    <p>MarketCap: {{ vm.company.MarketCap }}</p>
-    <p>LastSale: {{ vm.company.LastSale }}</p>
-    <p>Ipoyear: {{ vm.company.IPOyear }}</p>
-    <p>Sector: {{ vm.company.Sector }}</p>
-    <p>Industry: {{ vm.company.industry }}</p>
-    <p>Summary Quote: <a href= "{{ vm.company['Summary Quote'] }}">{{ vm.company['Summary Quote'] }}</a></p>
+    <h2>{{ vm.company.Name }} </h2>
+    <ul class="container3">
+	    <li><div class="name">Symbol</div><div class="value">{{vm.company.Symbol}}</div></li>
+	    <li><div class="name">Market Cap</div><div class="value">{{vm.company.MarketCap}}</div></li>
+	    <li><div class="name">Last Sale</div><div class="value">{{vm.company.LastSale}}</div></li>
+	    <li><div class="name">IPO Year</div><div class="value">{{vm.company.IPOyear}}</div></li>
+	    <li><div class="name">Industry</div><div class="value">{{vm.company.industry}}</div></li>
+	    <li><div class="name">Summary Quote</div><a class="value" href= "{{ vm.company['Summary Quote'] }}" target="_blank">{{ vm.company['Summary Quote'] }}</a></li>
+    </ul>
+    <div ng-show="vm.displayPrice">
+        <ul class="container3 price">
+    	    <li><div class="name">Date</div><div class="value">{{vm.price.date}}</div></li>
+    	    <li><div class="name">Opening Price</div><div class="value">{{vm.price.open | currency}}</div></li>
+    	    <li><div class="name">Closing Price</div><div class="value">{{vm.price.close | currency}}</div></li>
+    	    <li><div class="name">High</div><div class="value">{{vm.price.high | currency}}</div></li>
+    	    <li><div class="name">Low</div><div class="value">{{vm.price.low | currency}}</div></li>
+    	    <li><div class="name">Volume</div><div class="value">{{vm.price.volume}}</div></li>
+        </ul>
+    </div>
 
-    <form ng-click="vm.getCompanyDetails()">        
+    <form ng-hide="vm.displayPrice" ng-click="vm.getCompanyDetails()">        
         <button class="btn btn-info" type=submit>Get Latest Price</button>
     </form> 
-    
-    <div ng-if="vm.displayPrice">
-        <p>Date: {{ vm.price.date }}</p>
-        <p>Opening Price: {{ vm.price.open }}</p>
-        <p>Closing Price: {{ vm.price.close }}</p>
-        <p>High: {{ vm.price.high }}</p>
-        <p>Low: {{ vm.price.low }}</p>
-        <p>Volume: {{ vm.price.volume }}</p>
-    </div>
 </div>
         
         

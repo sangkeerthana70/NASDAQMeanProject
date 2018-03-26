@@ -3,12 +3,49 @@
     margin-top:10px;
 }
 .container2 {
-    padding: 0px 0px 0px 0px; 
-    margin-top:50px;
+    margin-top:100px;
+    width:75%;
+    margin:100px auto;
 }
-.cinput {
-    background-color: white;
-    width:30px;
-    color:blue;
+.container3 {
+    width:70%;
+}
+thead {
+    font-size: medium;
+    color:white;
+}
+th {
+    background-color: steelblue;
+}
+td {
+	padding: 0px 0px 0px 0px;
+}
+li{
+	list-style: none;
+	margin-bottom:15px;
+	font-size:20px;
 }
 
+.name {
+	display:inline;
+	width:30%;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+.value {
+	width:50%;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	display:inline;
+	float:right;
+}
+
+.price {
+    color:grey;
+}
+.pagination {
+	width:40%;
+	float:right;
+	text-align: center;
+}

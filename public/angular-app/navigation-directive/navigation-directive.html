@@ -13,13 +13,19 @@
 		<div id="navbar" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
 				<li ng-class="vm.isActiveTab('')" class="active"><a href="#/">Home</a></li>
-				<li ng-class="vm.isActiveTab('companies')"><a href="#!/companies">Companies</a></li>
-				<li ng-class="vm.isActiveTab('register')" ng-if="!vm.isLoggedIn()"><a href="#!/register">Register</a></li>
-				<li ng-class="vm.isActiveTab('profile')" ng-if="vm.isLoggedIn()"><a href="#!/profile">Profile</a></li>
-				<li><input type="text" class="form-control input-sm" placeholder="Enter Symbol" ng-model="vm.symbol" autocapitalize="none"></li>
-				<li><a href="#!/companyBySymbol/{{vm.symbol}}">Search</a></li>
-			</ul>
+				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#/">Companies</a>
+			        <ul class="dropdown-menu">
+			          <li><a href="#!/companies?offset=0">Get All</a></li>
+			          <li>
+						<ul class="nav navbar-nav">
+							<li><input type="text" class="form-control input-sm" placeholder="Enter Symbol" ng-model="vm.symbol" autocapitalize="true"></li>
+							<li class="cli"><a href="#!/companyBySymbol/{{vm.symbol}}">Search</a></li>
+						</ul>
+			          </li>
+			        </ul>
+			    </li>    
 
+			</ul>
 			<form ng-if="!vm.isLoggedIn()" class="navbar-form navbar-right" role="login" ng-submit="vm.login()">
 				<div class="form-group" ng-class="{'has-error': vm.error}">
 					<input type="text" class="form-control input-sm cinput" placeholder="Username" ng-model="vm.username" autocapitalize="none">
@@ -35,6 +41,10 @@
 				<li><button class="navbar-btn btn-sm btn-info" ng-click="vm.logout()">Logout</button></li>
 			</ul>
 			
+			<ul class="nav navbar-right">
+				<li ng-class="vm.isActiveTab('register')" ng-if="!vm.isLoggedIn()"><a href="#!/register">Register</a></li>
+				<li ng-class="vm.isActiveTab('profile')" ng-if="vm.isLoggedIn()"><a href="#!/profile">Profile</a></li>
+			</ul>
 
 		</div>
 	</div>

@@ -44,7 +44,7 @@ module.exports.companiesGetAll = function(req, res) {
   }
 
     Company
-      .find({}, 'Name LastSale MarketCap IPOyear')
+      .find({}, 'Symbol Name MarketCap')
       .skip(offset)
       .limit(count)
       .exec(function(err, companies) {
@@ -63,6 +63,22 @@ module.exports.companiesGetAll = function(req, res) {
       });
   
   };
+
+module.exports.companyGetCount = function(req,res) {
+    Company
+    .count()
+    .exec(function(err,doc){
+      if (err) {
+        res
+          .status(500)
+          .json(err);
+      }
+      console.log(doc);
+      res
+          .status(200)
+          .json(doc);
+      });
+};
 
 module.exports.companyGetOne = function(req, res) {
     console.log("In the get Company by Id Route");
