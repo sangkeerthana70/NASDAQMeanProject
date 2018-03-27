@@ -21,7 +21,7 @@ function RegisterController($http) {
             }
             else {
                 console.log("Making ajax call");
-                $http.post('/api/users/register', user).then(function(result) {//passing the object created above(in line8)
+                $http.post('/api/users/register', user).then(function(result) {//passing the object created above(in line9)
                     console.log(result);
                     vm.message = 'Successful registration, please login.';
                     vm.error = '';
