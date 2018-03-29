@@ -1,4 +1,4 @@
-/*global  angular*/
+/*global  angular $ APIKEY key*/
 angular.module('meanNASDAQ').controller('CompanyController', CompanyController);
 function CompanyController($route, $routeParams, $window, companyDataFactory, AuthFactory, jwtHelper) {
     var vm = this;
@@ -26,7 +26,7 @@ function CompanyController($route, $routeParams, $window, companyDataFactory, Au
     vm.getCompanyDetails = function() {
         var vm = this;
         var symbol = vm.company.Symbol;
-        var key = "ZNUTL939MS3TW5UF";
+        var key;
         console.log("Symbol",symbol);
         companyDataFactory.companyDetails(symbol, key).then(function(response) {
             console.log(response);

@@ -49,3 +49,10 @@ li{
 	float:right;
 	text-align: center;
 }
+.footer {
+    position: absolute;
+    border-top: 1px solid #000;
+    width: 100%;
+    background-color: blue;
+    padding-top: 10px;
+}

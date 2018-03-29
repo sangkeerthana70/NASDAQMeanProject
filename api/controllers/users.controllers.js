@@ -15,7 +15,7 @@ module.exports.register = function(req, res) {
     User.create({
         username: username,
         name: name,
-        password: bcrypt.hashSync(password, bcrypt.genSaltSync(10))
+        password: bcrypt.hashSync(password, bcrypt.genSaltSync(10))//encrypted password requiring npm bcrypt-nodejs
     }, function (err, user) {
         if (err) {
             console.log(err);

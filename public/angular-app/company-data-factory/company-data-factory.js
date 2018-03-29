@@ -1,4 +1,4 @@
-/* global angular*/
+/* global angular $ APIKEY key*/
 angular.module('meanNASDAQ').factory('companyDataFactory', companyDataFactory);
 
 function companyDataFactory($http) {
